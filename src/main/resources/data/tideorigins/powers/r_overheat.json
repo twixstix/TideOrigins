@@ -1,0 +1,291 @@
+{
+	"name": "Heat Sensitive",
+	"description": "You have a temperature bar that is affected by being in warm locations.",
+	"type": "origins:multiple",
+	"normal_heat": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:biome",
+						"condition": {
+							"type": "origins:temperature",
+							"comparison": ">=",
+							"compare_to": 2
+						}
+					},
+					"action": {
+						"type": "origins:if_else_list",
+						"actions": [
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 0
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 8
+								}
+							},
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 1
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 6
+								}
+							},
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 2
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 4
+								}
+							},
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 3
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 2
+								}
+							},
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 4
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 0
+								}
+							}
+						]
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:biome",
+						"condition": {
+							"type": "origins:temperature",
+							"comparison": ">=",
+							"compare_to": 0.95
+						}
+					},
+					"action": {
+						"type": "origins:if_else_list",
+						"actions": [
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 0
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 4
+								}
+							},
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 1
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 3
+								}
+							},
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 2
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 2
+								}
+							},
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 3
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 1
+								}
+							},
+							{
+								"condition": {
+									"type": "origins:enchantment",
+									"enchantment": "moborigins:heat_protection",
+									"calculation": "sum",
+									"comparison": "==",
+									"compare_to": 4
+								},
+								"action": {
+									"type": "origins:change_resource",
+									"resource": "tideorigins:r_temperature",
+									"change": 0
+								}
+							}
+						]
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:biome",
+						"condition": {
+							"type": "origins:temperature",
+							"comparison": ">",
+							"compare_to": 0.3
+						}
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "tideorigins:r_temperature",
+						"change": -4
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:biome",
+						"condition": {
+							"type": "origins:temperature",
+							"comparison": "<=",
+							"compare_to": 0.3
+						}
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "tideorigins:r_temperature",
+						"change": -8
+					}
+				}
+			]
+		}
+	},
+	"reg_ice": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "tideorigins:r_temperature",
+			"change": -4
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"block_condition": {
+				"type": "origins:or",
+				"conditions": [
+					{
+						"type": "origins:block",
+						"block": "minecraft:ice"
+					},
+					{
+						"type": "origins:block",
+						"block": "minecraft:frosted_ice"
+					}
+				]
+			}
+		}
+	},
+	"packed_ice": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "tideorigins:r_temperature",
+			"change": -5
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"block_condition": {
+				"type": "origins:block",
+				"block": "minecraft:packed_ice"
+			}
+		}
+	},
+	"blue_ice": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "tideorigins:r_temperature",
+			"change": -6
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"block_condition": {
+				"type": "origins:block",
+				"block": "minecraft:blue_ice"
+			}
+		}
+	},
+	"burning": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "tideorigins:r_temperature",
+			"change": 10
+		},
+		"interval": 10,
+		"condition": {
+			"type": "origins:on_fire"
+		}
+	},
+	"on_death": {
+		"type": "origins:action_on_callback",
+		"entity_action_respawned": {
+			"type": "origins:change_resource",
+			"resource": "tideorigins:r_temperature",
+			"change": -400
+		}
+	}
+}

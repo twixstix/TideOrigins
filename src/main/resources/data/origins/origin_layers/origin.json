@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "origins": [
+    "tideorigins:parrot",
+    "tideorigins:cavespider",
+    "tideorigins:ghast",
+    "tideorigins:moth",
+    "tideorigins:frostling",
+    "tideorigins:bat",
+    "tideorigins:shroomian",
+    "tideorigins:amphibian",
+    "tideorigins:crystalline"
+  ]
+}

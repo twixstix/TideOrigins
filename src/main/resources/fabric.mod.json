@@ -1,35 +1,38 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+  "id": "tideorigins",
+  "version": "1.0.0",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "TideOrigins",
+  "description": "Adds a handful of Origins made by Tide.",
   "authors": [
-    "Me!"
+    "twixstixx"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/twixstix/TideOrigins"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/tideorigins/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.twixstixx.tideorigins.TideOriginsMod"
+    ],
+    "client": [
+      "net.twixstixx.tideorigins.TideOriginsClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "tideorigins.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.6",
+    "fabricloader": ">=0.13.3",
     "fabric": "*",
-    "minecraft": "~1.19",
+    "minecraft": "1.18.2",
     "java": ">=17"
   },
   "suggests": {
